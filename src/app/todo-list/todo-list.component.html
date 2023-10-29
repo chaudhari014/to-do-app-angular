@@ -1,0 +1,69 @@
+<div class="main-container">
+  <div *ngFor="let task of tasks" class="task-item">
+    <p *ngIf="!editingTask || task.id !== editingTask.id">
+      <input
+        type="checkbox"
+        [(ngModel)]="task.completed"
+        (click)="markAsCompleted(task)"
+        class="task-checkbox"
+      />
+    </p>
+    <div *ngIf="editingTask && task.id === editingTask.id" class="edit-task">
+      <input
+        [(ngModel)]="editingTask.title"
+        name="title"
+        class="task-title-input"
+      />
+    </div>
+    <div *ngIf="editingTask && task.id === editingTask.id" class="edit-task">
+      <textarea
+        [(ngModel)]="editingTask.description"
+        name="description"
+        class="task-description-input"
+      ></textarea>
+    </div>
+    <h1 *ngIf="!editingTask || task.id !== editingTask.id">{{ task.title }}</h1>
+    <span *ngIf="!editingTask || task.id !== editingTask.id">
+      {{ task.description }}
+    </span>
+    <p
+      *ngIf="!editingTask || task.id !== editingTask.id"
+      class="view-task task-status"
+      [ngClass]="{ completed: task.completed }"
+    >
+      {{ task.completed ? "Completed" : "Pending" }}
+    </p>
+    <div>
+      <button
+        *ngIf="!editingTask || task.id !== editingTask.id"
+        (click)="startEditing(task)"
+        class="action-button edit-button"
+      >
+        edit
+      </button>
+      <button
+        *ngIf="!editingTask || task.id !== editingTask.id"
+        (click)="deleteTask(task.id)"
+        class="action-button delete-button"
+      >
+        delete
+      </button>
+
+      <button
+        *ngIf="editingTask && task.id === editingTask.id"
+        (click)="saveEditedTask()"
+        class="action-button save-button"
+      >
+        Save
+      </button>
+
+      <button
+        *ngIf="editingTask && task.id === editingTask.id"
+        (click)="cancelEditing()"
+        class="action-button cancel-button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

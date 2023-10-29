@@ -1,0 +1,98 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-item {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.task-item:hover {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task-title-input,
+.task-description-input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  word-wrap: break-word; /* Wrap long words to the next line */
+  overflow: auto;
+}
+
+.view-task h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.view-task p {
+  margin: 5px 0;
+}
+.task-description-input,
+.view-task p {
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* Wrap long words to the next line */
+  overflow-x: hidden;
+}
+
+.view-task.task-status {
+  font-weight: bold;
+  color: #2e8b57; /* Dark Green for Completed */
+}
+
+.action-button {
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.action-button:hover {
+  background-color: #0056b3; /* Darker Blue on Hover */
+}
+.view-task.task-status {
+  font-weight: bold;
+  color: #ff0000; /* Red for Pending */
+}
+
+.view-task.task-status.completed {
+  color: #2e8b57; /* Dark Green for Completed */
+}
+@media screen and (max-width: 440px) {
+  .task-item {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .task-item {
+    margin: 10px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="form-container">
+  <p>Add your Task Here</p>
+  <form (submit)="addTask($event)">
+    <input [(ngModel)]="task.title" name="title" placeholder="Title" required />
+    <textarea
+      [(ngModel)]="task.description"
+      name="description"
+      placeholder="Description"
+    ></textarea>
+    <button type="submit">Add Task</button>
+  </form>
+</div>

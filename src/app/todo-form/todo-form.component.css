@@ -1,0 +1,67 @@
+/* Styling for the task form container */
+.form-container {
+  background-color: #f7f7f7;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-container p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+/* @media (max-width: 600px) {
+  .form-container {
+    margin: 10px;
+    padding: 10px;
+  }
+} */
+
+/* Mobile styles */
+@media (max-width: 400px) {
+  .form-container input,
+  .form-container textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .form-container button {
+    padding: 8px 16px;
+  }
+}
